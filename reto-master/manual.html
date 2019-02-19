@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://unpkg.com/vue"></script>
+	<title>jJobson</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container" id= "app">
+		
+		<!--TITULO -->
+		<div class="row p-3 bg-dark text-light">
+			<div class="col">
+				<br><br><br>
+				<h1 class="text-center">{{titulo}}</h1>
+				
+				<hr class="bg-light">
+				<br><br>
+			</div>
+		</div>
+		<!--ARTICULOS -->
+		<div class="row p-3  bg-light">
+			<div class="col-md-6">
+				<br><button @click="showProfesor = false; showAlumno = true; ">Soy un Alumno</button>	
+			</div>
+			<div class="col-md-6">
+				<br><button @click="showAlumno = false; showProfesor = true; ">Soy un profesor</button>
+
+			</div>
+			<div class="col-md-12">
+				<br><br>
+				<p class="text-justify" v-if="showAlumno">{{parrafo1A }}</p>
+				<p class="text-justify" v-if="showAlumno">{{parrafo2A }}</p>
+				<p class="text-justify" v-if="showAlumno">{{parrafo3A }}</p>
+				<p class="text-justify" v-if="showAlumno">{{parrafo5A }}</p>
+				<p class="text-justify" v-if="showProfesor">{{parrafo1P }}</p>
+				<p class="text-justify" v-if="showProfesor">{{parrafo2P }}</p>
+				<p class="text-justify" v-if="showProfesor">{{parrafo3P }}</p>
+				<p class="text-justify" v-if="showProfesor">{{parrafo4P }}</p>
+
+			</div>
+		</div>
+		
+	</div>
+
+	<script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        titulo: 'Manual de Usuario jJobson',
+        parrafo1A: '		Pantalla Login - Para entrar en la aplicación el alumno debe ingresar su dirección de correo electrónico y la contraseña que se le ha proporcionado en los inputs correspondientes. El botón “Acceso Profesores” llevará a una página de login distinta, que sólo entrará a la aplicación con una cuenta de profesor. Esto ocurre porque los elementos que se muestran en pantalla son distintos para alumnos y profesores. Una vez el usuario se haya logueado de manera correcta, se entrará en la aplicación.  ',
+        parrafo2A:'		El menú cuenta con los botones “Ofertas”, “Perfil” y “Cerrar sesión”. También hay dos enlaces a “Ofertas” y “Perfil” en forma de imagen en la parte central de la pantalla. Hacer click en el logo llevará a la página principal. ',
+        parrafo3A:'		El botón ofertas nos llevará a la pantalla de ofertas. En ella se mostrarán las distintas ofertas de empleo que haya disponibles. Se muestra un listado con información básica de cada oferta. Si clicamos en el botón “detalles” de una de ellas nos llevará a una pantalla en la que se mostrará una información más ampliada de la misma. En esta pantalla también encontraremos un botón de “Apuntarse”, con el que el alumno podrá inscribirse en una oferta, y un botón de “Atrás” con el que el alumno volverá a la pantalla principal de ofertas. ',
+        parrafo4A: '	El botón perfil nos llevará a la pantalla Perfil, en la que el alumno podrá ver sus datos y editarlos. Tanto alumnos como profesores cuentan con el botón Cerrar Sesion que nos devolverá al login inicial ',
+        parrafo1P: ' 	Para ingresar a la aplicación como profesor, en la pantalla de Login se deberá hacer click en el botón “Acceso Profesores”, y en esta pantalla rellenar los inputs con un correo electrónico y una contraseña válida. Una vez el usuario se haya logueado de manera correcta, se entrará en la aplicación.',
+        parrafo2P:'  	El menú cuenta con los botones “Alumnos,  “Ofertas”, “Profesores”, “Perfil” y “Cerrar sesión”. También hay tres enlaces a “Ofertas”, “Alumnos” y “Perfil” en forma de imagen en la parte central de la pantalla. Hacer click en el logo llevará a la página principal.',
+        parrafo3P:' El botón alumnos llevará a la pantalla Alumnos. Es esta se muestra un listado con la foto, nombre y dni de todos los alumnos dados de alta. cada alumno también cuenta con tres botones: “Detalles”, “Desactivar” y “Eliminar”. En la parte inferior también se encuentra el botón “Crear Alumno”.  En la pantalla Alumnos, al dar click en el botón detalles de uno de los alumnos, entraremos en la pantalla “detalles de alumno” en la que tendremos una información más detallada del alumno escogido a la par que dos botones. Los botones son “Atras, que nos enviará a la página principal de alumnos, y “Editar”, que nos llevará a la pantalla “Editar Alumno”. En esta pantalla aparecerán los datos de los alumnos pero esta vez en estado editable. Podremos modificar la información que sea necesaria. Esta pantalla cuenta con dos botones, “El botón “editar”, que guardará los cambios que hayamos realizado, y el botón atrás nos redirige a la página anterior. En la página “Alumnos, con el botón “Crear alumno” nos dirigiremos a la página “Crear alumno”, que nos permitirá rellenar los campos para crear un nuevo alumno. Una vez se haya creado nos devolverá a la pantalla principal de alumnos. La pantalla crear alumno cuenta también con la opción de importar un fichero csv con la información de uno o más alumnos que queramos insertar. Cada alumno cuenta también con un botón de desactivar, que le da de baja del sistema (pero no lo elimina) y un botón eliminar, que lo elimina definitivamente.',
+        parrafo4P:' Las pantallas “Profesores” y “Ofertas” tienen un funcionamiento similar, con la diferencia de que en la pantalla principal de ofertas cada una de ellas tiene el botón “lista apuntados” que nos permitirá ver los alumnos que hay apuntados a cada oferta. Tanto alumnos como profesores cuentan con el botón Cerrar Sesion que nos devolverá al login inicial ',
+        showAlumno:false,
+        showProfesor:false,
+       
+      },
+
+      	
+    })
+  </script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
