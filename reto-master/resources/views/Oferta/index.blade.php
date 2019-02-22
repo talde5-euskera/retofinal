@@ -57,6 +57,11 @@
                             </div>
                         </div>
                         <div class="row">
+                            @if(session('admin') == "si")
+                            <div class="text-center mb-35">
+                                <a href="{{ url('/oferta/create')}}" class="button large-button">Crear oferta</a>
+                            </div>
+                            @endif
                             <div class="col-md-12">
                                 <div class="job-post-container fix">
 
@@ -79,8 +84,10 @@
                                         <div class="col-2 pl-60 text-center pt-22">            
                                             <a href="{{ url('/oferta/show/'.$oferta->id )}}" class="button btn-orange">Detalles</a>
                                             @if(session('rol') != "alumno")
-                                            <a href="{{ url('/oferta/apuntados/'.$oferta->id )}}" class="button btn-blue mt-10">Lista apuntados</a>
-                                            <a href="{{url('/oferta/eliminar/'.$oferta->id)}}" class="button btn-red mt-10">&#x2717; Eliminar</a>
+                                                <a href="{{ url('/oferta/apuntados/'.$oferta->id )}}" class="button btn-blue mt-10">Lista apuntados</a>
+                                                @if(session('admin') == "si")
+                                                    <a href="{{url('/oferta/eliminar/'.$oferta->id)}}" class="button btn-red mt-10">&#x2717; Eliminar</a>
+                                                @endif
                                             @endif
                                         </div>
                                     </div>
@@ -89,11 +96,7 @@
                                    
                                 </div>
                             </div>
-                            @if(session('rol') != "alumno")
-                            <div class="text-center">
-                                <a href="{{ url('/oferta/create')}}" class="button large-button">Crear oferta</a>
-                            </div>
-                            @endif
+                            
                         </div>
 
                     </div>
