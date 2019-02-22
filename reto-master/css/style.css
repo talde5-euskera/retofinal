@@ -1,0 +1,57 @@
+.btn-orange{
+	background-color: #e65c00;
+	color: white;	
+}
+
+.btn-orange:hover{
+	background-color: #338DFF;
+	color: white;	
+}
+
+.btn-link:hover{
+    color: #e65c00;
+}
+
+.btn-primary:hover{
+    background-color: #e65c00;
+    border: 1px solid #e65c00;
+}
+
+.link-orange{
+    color: #e65c00;
+}
+
+.link-orange:hover{
+    color: #338DFF;
+}
+
+.fondologinalumno{
+	margin-top: 10%;
+	background-color:#338DFF;
+    background-image: linear-gradient(30deg, #264061 12%, transparent 12.5%, transparent 87%, #264061 87.5%, #264061),
+    linear-gradient(150deg, #264061 12%, transparent 12.5%, transparent 87%, #264061 87.5%, #264061),
+    linear-gradient(30deg, #264061 12%, transparent 12.5%, transparent 87%, #264061 87.5%, #264061),
+    linear-gradient(150deg, #264061 12%, transparent 12.5%, transparent 87%, #264061 87.5%, #264061),
+    linear-gradient(60deg, #78B3FE 25%, transparent 25.5%, transparent 75%, #78B3FE 75%, #78B3FE),
+    linear-gradient(60deg, #78B3FE 25%, transparent 25.5%, transparent 75%, #78B3FE 75%, #78B3FE);
+    background-size:80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.fondologinprofesor{
+	margin-top: 10%;
+	background-color:#e65c00;
+    background-image: linear-gradient(30deg, #833400 12%, transparent 12.5%, transparent 87%, #833400 87.5%, #833400),
+    linear-gradient(150deg, #833400 12%, transparent 12.5%, transparent 87%, #833400 87.5%, #833400),
+    linear-gradient(30deg, #833400 12%, transparent 12.5%, transparent 87%, #833400 87.5%, #833400),
+    linear-gradient(150deg, #833400 12%, transparent 12.5%, transparent 87%, #833400 87.5%, #833400),
+    linear-gradient(60deg, #FFB17D 25%, transparent 25.5%, transparent 75%, #FFB17D 75%, #FFB17D),
+    linear-gradient(60deg, #FFB17D 25%, transparent 25.5%, transparent 75%, #FFB17D 75%, #FFB17D);
+    background-size:80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.titulo {
+font-size: 28px;
+text-align: center;
+}

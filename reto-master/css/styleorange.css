@@ -1,0 +1,325 @@
+/*----------------------------------------*/
+/*  Profesores
+/*----------------------------------------*/
+
+.blog-area {
+    background-image: url("naranja.png");
+    background-position: 0px 200px;
+    background-repeat:no-repeat;
+}
+
+#blog-area {
+    background-image: url("naranja2.png");
+    background-position: right top -17% ;
+    background-repeat:no-repeat;
+}
+
+.single-job-post {
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    border-top: 1px solid #e3e3e3;
+    position: relative
+}
+.job-title {position: relative;}
+.job-title:after {
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    position: absolute;
+    top: 0;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: 4px;
+}
+.single-job-post:hover .job-title {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.single-job-post:hover .job-title:after {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.job-title a {display: block;}
+.job-title a img {border: 1px solid #E5E5E5}
+.job-title h4 {font-family: "montserratregular";}
+.job-title h5 {color: #646464; font-family: "montserratsemi_bold";}
+.address span {color: #6d6d6d; line-height: 24px;}
+.time-payment span {
+    color: #6d6d6d;
+    font-family: "montserratsemi_bold";
+    font-size: 18px;
+    line-height: 24px
+}
+.stime-payment a.button {
+	padding: 0;
+	text-align: center;
+	width: 121px;
+	font-size: 14px
+}
+.single-job-post:last-child {border-bottom: 1px solid #e3e3e3;}
+a.button.large-button {line-height: 33px; padding: 0 30px}
+
+/*----------------------------------------*/
+/*  5.  Blog Area
+/*----------------------------------------*/
+.box-hover a {display: block; position: relative;}
+.box-hover > a:after {
+    background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transition: all 0.3s ease-in 0s;
+    transition: all 0.3s ease-in 0s;
+}
+.hover-effect:hover .box-hover > a:after {
+    bottom: 20px;
+    left: 20px;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    right: 20px;
+    top: 20px;
+}
+.hover-effect:hover .box-hover.hover-large > a:after {bottom: 88px; top: 88px;}
+.blog-image {border-bottom: 4px solid transparent;}
+.blog-image img {width: 100%;}
+.blog-date {
+	display: inline-block;
+	font-family: "montserratregular";
+	height: 66px;
+	line-height: 24px;
+	text-align: center;
+	width: 77px;
+}
+.blog-date span.text-large {font-family: "montserratsemi_bold"; font-size: 30px;}
+.blog-post-info > span {
+    color: #8e8e8e;
+    display: inline-block;
+    font-size: 12px;
+}
+.blog-post-info {display: inline-block;}
+.blog-post-info > span i{bottom: -2px; position: relative}
+.blog-text > h5 {color: #5c5c5c; font-family: "montserratsemi_bold";}
+.blog-text > p {color: #8e8e8e; font-size: 12px;}
+
+/*----------------------------------------*/
+/*  Index, Login, Perfil, etc
+/*----------------------------------------*/
+.single-info label {
+	color: #525252;
+	font-family: "montserratsemi_bold";
+	font-size: 14px;
+	width: 160px;
+	line-height: 34px;
+}
+.single-info input{
+	font-size: 12px;
+	color: #a2a2a2;
+	font-family: 'montserratlight';
+	height: 36px;
+	border: 1px solid #DEDEDE;
+	background: #fff
+}
+.single-info input.dark-border {border-color: #a2a2a2;}
+.area-title > h2, .border-title {
+    border: 1px solid #525252;
+    color: #525252;
+    font-family: "montserratregular";
+    font-size: 24px;
+}
+.border-title {font-size: 16px; border: 1px solid #A2A2A2}
+.background-title {
+    font-size: 16px;
+    color: #fff;
+    font-family: "montserratregular";
+}
+.title > span {
+    border: 1px solid #dedede;
+    color: #606060;
+    display: inline-block;
+    font-family: "montserratregular";
+    padding: 7px 23px;
+}
+.title > span.lg {padding: 7px 46px}
+.title > span.medium {padding: 7px 31px}
+.text-style span {color: #525252; display: inline-block;}
+.text-style {background: #f0f0f0 none repeat scroll 0 0;}
+textarea.textarea {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border-left: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    font-size: 12px;
+    color: #a2a2a2;
+    font-family: 'montserratlight';
+    height: 150px;
+    border: 1px solid #DEDEDE;
+    resize: none
+}
+textarea.textarea.small{height: 120px}
+.uploader, .photo-uploader {
+    position: relative;
+    height: 36px;
+    border: 1px solid #dedede;
+    width: 310px
+}
+.photo-uploader {width: 79.1%;}
+#fileupload > input, .fileupload #fileupload {
+	-moz-appearance: none;
+	border: 0 none;
+	color: #ffffff;
+	cursor: pointer;
+	height: 100%;
+	opacity: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+.filename {
+	color: #a2a2a2;
+	cursor: default;
+	display: block;
+	float: left;
+	font-size: 12px;
+	height: 100%;
+	line-height: 34px;
+	overflow: hidden;
+	padding: 0 10px;
+	width: 65%;
+}
+.action {
+	color: #5e5e5e;
+	font-size: 12px;
+	height: 100%;
+	overflow: hidden;
+	text-align: right;
+	float: right;
+	line-height: 34px;
+	padding-right: 14px;
+	font-family: 'montserratlight';
+}
+.action i{font-size: 12px; margin-right: 7px}
+.photo-uploader .action {
+	color: #ffffff;
+	font-family: "montserratregular";
+	padding: 0;
+	text-align: center;
+	text-transform: uppercase;
+	width: 102px;
+}
+.max-size {
+	color: #a2a2a2;
+	font-family: "montserratlight";
+	font-size: 12px;
+	line-height: 36px;
+}
+
+/*----------------------------------------*/
+/*  Checkbox Registro
+/*----------------------------------------*/
+.conditions input[type="radio"], input[type="checkbox"] {
+	border: 1px solid #e3e3e3;
+	height: 17px;
+	margin: 0 10px 0 0;
+	padding: 0;
+	position: relative;
+	top: -1px;
+	width: 20px;
+}
+
+/*-------Color Style--------*/
+button, .carousel-style-one.owl-theme .owl-controls .owl-nav div:hover, .carousel-style-two.owl-theme .owl-controls .owl-nav div, .pagination-content .pagination li a:hover, .pagination-content .pagination li.active a, .main-menu > li:hover > a, .dropdown > li:hover > a, .single-mega-item > li:hover > a,.mean-container .mean-nav ul li a:hover, .single-blog:hover .blog-text > h5, .breadcrumb-bar a:hover, .mark-icon::after, .sidebar-widget-lists > li a:hover, .tags-and-links .social-links a:hover i, .author-info > h4 a:hover, span.reply a, .footer-list a:hover, .recent-post-item:hover h5 a, .color-blue, .fixed.sticky .main-menu.text-white > li:hover > a, .footer-widget-list li a:hover, .footer-container .social-links-three > a:hover, ul.inside-menu > li:hover a  {
+    color: #e65c00;
+}
+.orange-bg, .separator, .separator span, .mobile-menu-area, .job-title::after, .advertise-content h3::before, .blog-date, .background-title, .photo-uploader .action, h4.title::after, .modal button.close, .single-contact-icon, .social-links a:hover, .header-top, .mean-container .mean-nav {
+    background: #e65c00;
+}
+a.button, button, input.button {
+    background-color: #e65c00;
+}
+.dropdown, .mega-menu-area, .blog-image{
+    border-color: #e65c00;
+}
+.preview-2 .nivo-directionNav a:hover{background: rgba(20, 177, 187, 0.5) }
+.header-top.bg-white {background: #ffffff none repeat scroll 0 0;}
+.header-top.border-top {
+	color: #333333;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.header-top.border-top {
+	border-top: 2px solid #e65c00;
+}
+.color-overlay::before {background: rgba(20, 177, 187, 0.5) none repeat scroll 0 0;}
+.bg-opacity-blue-70::before {background: rgba(20, 177, 187, 0.7) none repeat scroll 0 0;}
+
+.btn-black{
+	background-color: gray;
+	color: white;
+}
+
+.btn-orange{
+	background-color: #e65c00;
+	color: white;	
+}
+
+.btn-orange:hover{
+	background-color: #338DFF;
+	color: white;	
+}
+
+.btn-link:hover{
+    color: #e65c00;
+}
+
+.btn-primary:hover{
+    background-color: #e65c00;
+    border: 1px solid #e65c00;
+}
+
+.link-orange{
+    color: #e65c00;
+}
+
+.link-orange:hover{
+    color: #338DFF;
+}
+
+.fondologinalumno{
+	margin-top: 10%;
+	background-color:#338DFF;
+    background-image: linear-gradient(30deg, #264061 12%, transparent 12.5%, transparent 87%, #264061 87.5%, #264061),
+    linear-gradient(150deg, #264061 12%, transparent 12.5%, transparent 87%, #264061 87.5%, #264061),
+    linear-gradient(30deg, #264061 12%, transparent 12.5%, transparent 87%, #264061 87.5%, #264061),
+    linear-gradient(150deg, #264061 12%, transparent 12.5%, transparent 87%, #264061 87.5%, #264061),
+    linear-gradient(60deg, #78B3FE 25%, transparent 25.5%, transparent 75%, #78B3FE 75%, #78B3FE),
+    linear-gradient(60deg, #78B3FE 25%, transparent 25.5%, transparent 75%, #78B3FE 75%, #78B3FE);
+    background-size:80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.fondologinprofesor{
+	margin-top: 10%;
+	background-color:#e65c00;
+    background-image: linear-gradient(30deg, #833400 12%, transparent 12.5%, transparent 87%, #833400 87.5%, #833400),
+    linear-gradient(150deg, #833400 12%, transparent 12.5%, transparent 87%, #833400 87.5%, #833400),
+    linear-gradient(30deg, #833400 12%, transparent 12.5%, transparent 87%, #833400 87.5%, #833400),
+    linear-gradient(150deg, #833400 12%, transparent 12.5%, transparent 87%, #833400 87.5%, #833400),
+    linear-gradient(60deg, #FFB17D 25%, transparent 25.5%, transparent 75%, #FFB17D 75%, #FFB17D),
+    linear-gradient(60deg, #FFB17D 25%, transparent 25.5%, transparent 75%, #FFB17D 75%, #FFB17D);
+    background-size:80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.titulo {
+font-size: 28px;
+text-align: center;
+}
