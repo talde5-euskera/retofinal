@@ -37,6 +37,9 @@
         </div>
         <div class="row">
             <div class="col-md-12">
+                <div class="text-center mb-35">
+                    <a href="{{ url('/profesor/create')}}" class="button large-button">Añadir profesor</a>
+                </div>
                 <div class="job-post-container fix mb-70">
                     <!-- LISTA PROFESORES -->
 
@@ -62,22 +65,23 @@
                         </div>
                         <div class="keyword col-4 pl-20 pt-39">
                             <a href="{{ url('/profesor/show/'.$profesor->id )}}" class="button mr-10">&#9997; Detalles</a>
+                            @if($profesor->email != session('email'))
                             @if($profesor->baja == 0)
-                                <a href="{{url('/profesor/desactivar/'.$profesor->id)}}" class="button mr-10">Desactivar</a>
+                                    <a href="{{url('/profesor/desactivar/'.$profesor->id)}}" class="button mr-10">Desactivar</a>
+                                @else
+                                    <a href="{{url('/profesor/activar/'.$profesor->id)}}" class="button mr-10">
+                                    Activar</a>
+                                @endif
+                                <a href="{{url('/profesor/eliminar/'.$profesor->id)}}" class="button">&#x2717; Eliminar</a>
                             @else
-                                <a href="{{url('/profesor/activar/'.$profesor->id)}}" class="button mr-10">
-                                Activar</a>
+                                <a class="button mr-10">Este es tu usuario</a>
                             @endif
-                            <a href="{{url('/profesor/eliminar/'.$profesor->id)}}" class="button">&#x2717; Eliminar</a>
                         </div>
                     </div>
            
              @endforeach  
                  <!-- FIN LISTA PROFESORES -->
                          
-                </div>
-                <div class="text-center">
-                    <a href="{{ url('/profesor/create')}}" class="button large-button">Añadir profesor</a>
                 </div>
             </div>
         </div>
