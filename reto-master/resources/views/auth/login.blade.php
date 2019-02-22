@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"> {{ isset($url) ? ucwords($url) : ""}} {{ __('Login') }}</div>
+                    <div class="card-header titulo"> {{ isset($url) ? ucwords($url) : ""}} {{ __('Login') }}</div>
 
                     <div class="card-body">
                         
@@ -57,7 +57,20 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                @if (Request::is('login/profesor'))
+                                <button type="submit" class="btn btn-orange">
+                                    {{ __('Entrar') }}
+                                </button>
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link link-orange" href="{{ route('password.request') }}">
+                                        {{ __('Has olvidado tu contraseña?') }}
+                                    </a>
+                                @endif
+                                    <a class="btn btn-orange" href="{{ url('/') }}">
+                                        {{ __('Acceso Alumnos') }}
+                                    </a>
+                                @else
+                                <button type="submit" class="btn btn-primary ">
                                     {{ __('Entrar') }}
                                 </button>
 
@@ -66,12 +79,6 @@
                                         {{ __('Has olvidado tu contraseña?') }}
                                     </a>
                                 @endif
-
-                                @if (Request::is('login/profesor'))
-                                    <a class="btn btn-primary" href="{{ url('/') }}">
-                                        {{ __('Acceso Alumnos') }}
-                                    </a>
-                                @else
                                     <a class="btn btn-primary" href="{{ url('/login/profesor') }}">
                                         {{ __('Acceso Profesores') }}
                                     </a>

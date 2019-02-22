@@ -20,7 +20,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
-<body class="fondologin">
+@if (Request::is('login/profesor'))
+<body class="fondologinprofesor">
+@else
+<body class="fondologinalumno">
+@endif
     <div id="app">
        
 

@@ -14,10 +14,11 @@
                 @if(session('rol') != "profesor")
                 <script>
                 	function cambiartamaño() {
-                		document.getElementById('divofertas').classList.remove("col-xs-4");
-                	 document.getElementById('divperfil').classList.remove("col-xs-4");
-                		document.getElementById('divofertas').classList.add("col-xs-6");
-                		document.getElementById('divperfil').classList.add("col-xs-6");
+                	   document.getElementById('divofertas').classList.remove("col-xs-4");
+                	   document.getElementById('divperfil').classList.remove("col-xs-4");
+                	   document.getElementById('divofertas').classList.add("col-xs-5");
+                	   document.getElementById('divperfil').classList.add("col-xs-5");
+                        document.getElementById('divvacio').classList.add("col-xs-2");
                 	}
                 	
                 	 
@@ -50,7 +51,11 @@
                                     <div class="single-blog hover-effect">
                                         <div class="blog-image box-hover">
                                             <a id="opcion" href="{{ url('/perfil')  }}" class="block">
-                                                <img src="images/icons/perfil.png" alt="">
+                                                @if(session('rol') == "alumno")
+                                                    <img src="images/icons/perfil2.png" alt="">
+                                                @else
+                                                    <img src="images/icons/perfil.png" alt="">
+                                                @endif
                                             </a>
                                         </div>
                                         <div class="blog-text">
@@ -59,12 +64,16 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="" id="divvacio"></div>
                                 <div class="col-xs-4" id="divofertas">
                                     <div class="single-blog">
                                         <div class="blog-image box-hover">
                                             <a href="{{ url('/oferta/index')  }}" class="block">
-                                                <img src="images/icons/ofertas.png" id="ofertas" alt="">
+                                                @if(session('rol') == "alumno")
+                                                    <img src="images/icons/ofertas2.png" id="ofertas" alt="">
+                                                @else
+                                                    <img src="images/icons/ofertas.png" id="ofertas" alt="">
+                                                @endif
                                             </a>
                                         </div>
                                        <div class="blog-text">

@@ -44,23 +44,18 @@
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
         <!-- Modernizr JS -->
         <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>
-        @if(session('rol') != "alumno")
-        <link rel="stylesheet" href="{{ asset('css/styleorange.css') }}">
-        @else
-        <link rel="stylesheet" href="{{ asset('css/styleblue.css') }}">
-        @endif
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <!-- Color Css Files
         ============================================ -->
       
     </head>
       
-    <body onload="cambiartamaño()" class="fondo"> 
-         
+    <body onload="cambiartamaño()">      
         <script src="js/jquery/footer.js"></script>
         <!--Main Wrapper Start-->
         <div class="as-mainwrapper">
             <!--Bg White Start-->
-            <div class="bg-white" id="blog-area">
+            <div class="bg-white">
                 <!--Header Area Start-->
                  <header id="sticky-header" class="header-area">
                     <div class="container">
@@ -68,11 +63,7 @@
                             <div class="col-md-3 col-xs-12">
                                 <div class="logo">
                                     <a href="{{ url('/') }}">
-                                        @if(session('rol') != "alumno")
-                                            <img src="{{ asset('/images/logo/logonaranja.png') }}" alt="LOGO">
-                                        @else
-                                            <img src="{{ asset('/images/logo/logoazul.png') }}" alt="LOGO">
-                                        @endif
+                                        <img src="{{ asset('/images/logo/logo.png') }}" alt="LOGO">
                                     </a>
                                 </div>
                             </div>
@@ -138,6 +129,7 @@
                     <!-- Mobile Menu Area end -->
                 </header>
                 <!-- End of Header Area -->
+
                 @yield('content')
                                 <!--Start of Footer Widget-area-->
                 <div class="footer-widget-area black-bg pt-50 pb-50">
@@ -201,8 +193,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="footer-text">
-                                     <span class="text-white block">Copyright© Talde5 2019. Todos los derechos reservados. Creado por Aritz Pérez, Alexander Lara, Gotzon Otazua y Andrea Fernández. 
-
+                                     <span class="text-white block" id="cargafooter">
                                     </span>
                                 </div>
                             </div>
@@ -218,6 +209,7 @@
         <!--End of Bg White-->
         </div>
         <!--End of Main Wrapper Area-->
+
         <!-- jquery latest version
         ========================================================= -->
         <script src="{{ asset('js/vendor/jquery-1.12.4.min.js') }}"></script>
@@ -248,5 +240,7 @@
         <!-- Control Datos JQuery, RegExp y DOM
         ========================================================= -->
         <script src="{{ asset('js/jquery/controldatos.js') }}"></script>
+
     </body>
+
 </html>
