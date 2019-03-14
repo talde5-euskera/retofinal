@@ -55,6 +55,10 @@ Route::get('oferta/apuntarse/{id}', 'OfertaController@apuntarse');
 Route::resource('curriculum', 'CurriculumController');
 Route::resource('curso', 'CursoController');
 
+//selector de idioma
+Route::get('lang/{locale}', 'LocalizationController@index');
+
+
 // Gotzon Add's
 Route::get('/login/alumno', 'Auth\LoginController@showAlumnoLoginForm');
 Route::get('/login/profesor', 'Auth\LoginController@showProfesorLoginForm');
