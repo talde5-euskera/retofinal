@@ -80,22 +80,27 @@
                                 <div class="pull-right">
                                     <nav id="primary-menu">
                                         <ul class="main-menu text-right">
-                                            <li><a href="{{ url('/') }}">Inicio</a>
+                                            <li><a href="{{ url('/') }}">@lang("inicio")</a>
                                             </li>
-                                            <li><a href="{{ url('/oferta/index') }}">Ofertas</a></li>
+                                            <li><a href="{{ url('/oferta/index') }}">@lang("ofertas")</a></li>
                                             @if(session('rol') != "alumno")
-                                            <li><a href="{{ url('/alumno/index')  }}">Alumnos</a></li>
-                                            <li><a href="{{ url('/profesor/index')  }}">Profesores</a></li>
+                                            <li><a href="{{ url('/alumno/index')  }}">@lang("alumnos")</a></li>
+                                            <li><a href="{{ url('/profesor/index')  }}">@lang("profesores")</a></li>
                                              @endif
-                                            <li><a href="{{ url('/perfil')  }}">Perfil</a></li>
-                                            <li><a href="{{ url('/../manual.html') }}" target="_blank" >Manual de usuario</a></li>
+                                            <li><a href="{{ url('/perfil')  }}">@lang("perfil")</a></li>
+                                            <li><a href="{{ url('/../manual.html') }}" target="_blank" >
+                                            @lang("manualDeUsuario")</a></li>
+                                            <li><a href="lang/es" id="en"><img alt="es" width="40" src="{{ asset('/images/es.png') }}"></a></li>
+                                            <li> <a href="lang/eu" id="zh"><img alt="eu" width="40" src="{{ asset('/images/eu.png') }}"></a></li>
+                                             
                                         </ul>
+
                                     </nav>
                                     <div class="login-btn pt-36" aria-labelledby="navbarDropdown">
                                         <a class="modal-view button" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            {{ __('Cerrar Sesion') }}
+                                            @lang("cerrarSesion")
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -115,18 +120,18 @@
                                     <div class="mobile-menu">
                                         <nav id="dropdown">
                                             <ul>
-                                                <li><a href="{{ url('/') }}">Inicio</a>
+                                                <li><a href="{{ url('/') }}">@lang("inicio")</a>
                                                 </li>
                                                 @if(session('rol') != "alumno")
-                                                    <li><a href="{{ url('/alumno/index')  }}">Alumnos</a></li>
-                                                    <li><a href="{{ url('/profesor/index')  }}">Profesores</a></li>
+                                                    <li><a href="{{ url('/alumno/index')  }}">@lang("alumnos")</a></li>
+                                                    <li><a href="{{ url('/profesor/index')  }}">@lang("profesores")</a></li>
                                                 @endif
-                                                <li><a href="{{ url('/ofertas') }}" >Ofertas</a></li>
+                                                <li><a href="{{ url('/ofertas') }}" >@lang("ofertas")</a></li>
                                                 <div id="app">
-                                                <li><a href="{{ url('/alumnos')  }}" v-if="rol!=alumno">Alumnos</a></li>
-                                                <li><a href="{{ url('/profesores')  }} v-if="rol!=alumno">Profesores</a></li>
+                                                <li><a href="{{ url('/alumnos')  }}" v-if="rol!=alumno">@lang("alumnos")</a></li>
+                                                <li><a href="{{ url('/profesores')  }} v-if="rol!=alumno">@lang("profesores")</a></li>
                                                 <div>
-                                                <li><a href="{{ url('/perfil')  }}">Perfil</a></li>
+                                                <li><a href="{{ url('/perfil')  }}">@lang("perfil")</a></li>
                                             
                                             </ul>
                                         </nav>
@@ -138,6 +143,8 @@
                     <!-- Mobile Menu Area end -->
                 </header>
                 <!-- End of Header Area -->
+
+                                          
                 @yield('content')
                                 <!--Start of Footer Widget-area-->
                 <div class="footer-widget-area black-bg pt-50 pb-50">
@@ -146,8 +153,7 @@
                             <div class="col-md-3 col-sm-4">
                                 <div class="single-footer-widget">
                                      <h3 class="text-white mb-21">Sobre el centro</h3>
-                                    <p class="text-white pr-10">CIFP Txurdinaga es un centro de enseñanza de formación profesional ubicado en el barrio de Txurdinaga. Se imparten cursos de Grado Medio y Grado Superior de las ramas de Informática, Química, Administración y Finanzas,
-                                        Comercio y Ayuda Social.</p>
+                                    <p class="text-white pr-10">CIFP Txurdinaga es un centro de enseñanza de formación profesional ubicado en el barrio de Txurdinaga. Se imparten cursos de Grado Medio y Grado Superior de las ramas de Informática, Química, Administración y Finanzas,Comercio y Ayuda Social.</p>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-4">

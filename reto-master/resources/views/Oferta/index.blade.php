@@ -49,7 +49,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="section-title text-center ">
-                                    <h2 class="uppercase">Nuevas Ofertas</h2>
+                                    <h2 class="uppercase">@lang("nuevasOfertas")</h2>
                                     <div class="separator mt-35 mb-77">
                                         <span><img src="{{ asset('images/icons/1.png')}}" alt=""></span>
                                     </div>

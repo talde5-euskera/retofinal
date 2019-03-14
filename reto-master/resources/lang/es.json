@@ -1,0 +1,22 @@
+{   
+    "inicio" : "Inicio",
+    "ofertas" : "Ofertas",
+    "alumnos":"Alumnos",
+    "profesores":"Profesores",
+    "perfil" : "Perfil",
+    "manualDeUsuario" : "Manual de usuario",
+    "cerrarSesion" : "Cerrar sesion",
+    "nuevasOfertas" : "Nuevas Ofertas",
+    "alumnosApuntados": "Alumnos apuntados",
+    "quitarDeLaLista": "Quitar de la lista",
+    "añadirAlumno": "Añadir alumno",
+    "crearNuevaOferta": "Crear nueva oferta",
+    "titulo": "Titulo",
+    "empresa": "Empresa",
+    "localizacion": "Localizacion",
+    "sector": "Sector",
+    "descripcion": "Descripcion",
+    "funciones": "Funciones",
+    "requisitos": "Requisitos"
+
+ }

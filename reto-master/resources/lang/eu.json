@@ -1,0 +1,23 @@
+{   
+    "inicio" : "Hasiera",
+    "ofertas" : "Eskaintzak",
+    "alumnos":"Ikasleak",
+    "profesores":"Irakasleak",
+    "perfil" : "Perfila",
+    "manualDeUsuario" : "Erabiltzailearen eskuliburua",
+    "cerrarSesion" : "Saioa itxi",
+    "nuevasOfertas" : "Eskaitza berriak",
+    "alumnosApuntados": "Apuntatutako ikasleak",
+    "quitarDeLaLista": "Listatik kendu",
+    "añadirAlumno": "Ikaslea gehitu",
+    "crearNuevaOferta": "Eskaitza berria sortu",
+    "titulo": "Titulua",
+    "empresa": "Enpresa",
+    "localizacion": "Kokapena",
+    "sector": "Sektorea",
+    "descripcion": "Deskribapena",
+    "funciones": "Funtzioak",
+    "requisitos": "Baldintzak"
+    
+
+ }

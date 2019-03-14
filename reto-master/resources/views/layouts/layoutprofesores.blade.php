@@ -71,22 +71,24 @@
                                 <div class="pull-right">
                                     <nav id="primary-menu">
                                         <ul class="main-menu text-right">
-                                            <li><a href="{{ url('/') }}">Inicio</a>
+                                            <li><a href="{{ url('/') }}">@lang("inicio")</a>
                                             </li>
-                                            <li><a href="{{ url('/oferta/index') }}">Ofertas</a></li>
+                                            <li><a href="{{ url('/oferta/index') }}">@lang("ofertas")</a></li>
                                             @if(session('rol') != "alumno")
-                                            <li><a href="{{ url('/alumno/index')  }}">Alumnos</a></li>
-                                            <li><a href="{{ url('/profesor/index')  }}">Profesores</a></li>
+                                            <li><a href="{{ url('/alumno/index')  }}">@lang("alumnos")</a></li>
+                                            <li><a href="{{ url('/profesor/index')  }}">@lang("profesores")</a></li>
                                              @endif
-                                            <li><a href="{{ url('/perfil')  }}">Perfil</a></li>
-                                            <li><a href="{{ url('/../manual.html') }}" target="_blank" >Manual de usuario</a></li>
+                                            <li><a href="{{ url('/perfil')  }}">@lang("perfil")</a></li>
+                                            <li><a href="{{ url('/../manual.html') }}" target="_blank" >@lang("manualDeUsuario")</a></li>
+                                             <li><a href="lang/es" id="en"><img alt="es" width="40" src="{{ asset('/images/es.png') }}"></a></li>
+                                            <li> <a href="lang/eu" id="zh"><img alt="eu" width="40" src="{{ asset('/images/eu.png') }}"></a></li>
                                         </ul>
                                     </nav>
                                     <div class="login-btn pt-36" aria-labelledby="navbarDropdown">
                                         <a class="modal-view button" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            {{ __('Cerrar Sesion') }}
+                                            @lang("cerrarSesion")
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -106,18 +108,18 @@
                                     <div class="mobile-menu">
                                         <nav id="dropdown">
                                             <ul>
-                                                <li><a href="{{ url('/') }}">Inicio</a>
+                                                <li><a href="{{ url('/') }}">@lang("inicio")</a>
                                                 </li>
                                                 @if(session('rol') != "alumno")
-                                                    <li><a href="{{ url('/alumno/index')  }}">Alumnos</a></li>
-                                                    <li><a href="{{ url('/profesor/index')  }}">Profesores</a></li>
+                                                    <li><a href="{{ url('/alumno/index')  }}">@lang("alumnos")</a></li>
+                                                    <li><a href="{{ url('/profesor/index')  }}">@lang("profesores")</a></li>
                                                 @endif
                                                 <li><a href="{{ url('/ofertas') }}" >Ofertas</a></li>
                                                 <div id="app">
-                                                <li><a href="{{ url('/alumnos')  }}" v-if="rol!=alumno">Alumnos</a></li>
-                                                <li><a href="{{ url('/profesores')  }} v-if="rol!=alumno">Profesores</a></li>
+                                                <li><a href="{{ url('/alumnos')  }}" v-if="rol!=alumno">@lang("alumnos")</a></li>
+                                                <li><a href="{{ url('/profesores')  }} v-if="rol!=alumno">@lang("profesores")</a></li>
                                                 <div>
-                                                <li><a href="{{ url('/perfil')  }}">Perfil</a></li>
+                                                <li><a href="{{ url('/perfil')  }}">@lang("perfil")</a></li>
                                             
                                             </ul>
                                         </nav>
