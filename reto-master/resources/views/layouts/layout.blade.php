@@ -84,8 +84,10 @@
                                             </li>
                                             <li><a href="{{ url('/oferta/index') }}">@lang("ofertas")</a></li>
                                             @if(session('rol') != "alumno")
-                                            <li><a href="{{ url('/alumno/index')  }}">@lang("alumnos")</a></li>
-                                            <li><a href="{{ url('/profesor/index')  }}">@lang("profesores")</a></li>
+                                                <li><a href="{{ url('/alumno/index')  }}">@lang("alumnos")</a></li>
+                                                @if(session('admin') == "si")
+                                                    <li><a href="{{ url('/profesor/index')  }}">@lang("profesores")</a></li>
+                                                @endif
                                              @endif
                                             <li><a href="{{ url('/perfil')  }}">@lang("perfil")</a></li>
                                             <li><a href="{{ url('/../manual.html') }}" target="_blank" >
@@ -124,7 +126,9 @@
                                                 </li>
                                                 @if(session('rol') != "alumno")
                                                     <li><a href="{{ url('/alumno/index')  }}">@lang("alumnos")</a></li>
-                                                    <li><a href="{{ url('/profesor/index')  }}">@lang("profesores")</a></li>
+                                                    @if(session('admin') != "si")
+                                                        <li><a href="{{ url('/profesor/index')  }}">@lang("profesores")</a></li>
+                                                    @endif
                                                 @endif
                                                 <li><a href="{{ url('/ofertas') }}" >@lang("ofertas")</a></li>
                                                 <div id="app">

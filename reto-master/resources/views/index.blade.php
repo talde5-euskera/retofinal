@@ -45,7 +45,13 @@
                                 @if(session('rol') == "alumno")
                                     {{ session()->put('idlogin', $persona->id) }}
                                 @else
+                                
                                     {{ session()->put('idlogin', $persona->id) }}
+                                    @if($persona->admin == 1)
+                                        {{ session()->put('admin', 'si') }}
+                                    @else
+                                        {{ session()->put('admin', 'no') }}
+                                    @endif
                                 @endif
                                 <div class="col-xs-4" id="divperfil">
                                     <div class="single-blog hover-effect">
