@@ -9,11 +9,34 @@
   $(document).ready(function(){
     $("#myInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#filtro h4").filter(function() {
+        $("#filtro #vacio").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
+    $("#curso").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#filtro #vacio").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      }); 
     });
+
+    url = "scripts/alumnos.php";
+    //url = "$alumnos";
+
+        $.ajax({
+          type: "GET",
+          data: data,
+          url: url,
+          success: function(data)
+          {
+            
+          },
+          error: function()
+          {
+            
+          }
+        });
 </script>
 
 <!-- End of Header Area -->
@@ -29,30 +52,7 @@
                         </div>
                     <!--INICIO FILTROS-->
                         <div class="container mb-20">
-                        <h4 class="text-left">Filtrar por estudios</h4>
-
-                    <select class="selectpicker " >
-                      <optgroup label="Informatica">
-                        <option>Desarrollo de Aplicaciones Multiplataforma</option>
-                        <option>Desarrollo de Aplicaciones Web</option>
-                        <option>Administracion de Sistemas Informaticos en Red</option>
-                        <option>Sistemas Microinformáticos y Redes</option>
-                      </optgroup>
-                      <optgroup label="Administracion y Finanzas">
-                        <option>Administracion y Finanzas</option>
-                        <option>Gestión de Ventas y Espacios Comerciales</option>                      
-                      </optgroup>
-                      <optgroup label="Quimica">
-                        <option>Laboratorio de Analisis y de Control de Calidad</option>                      
-                      </optgroup>
-                       <optgroup label="Comercio y Marketing">
-                        <option>Actividades Comerciales</option>                      
-                      </optgroup>
-                       <optgroup label="Electricidad-Electronica">
-                        <option>Instalaciones de Comunicaciones</option>                      
-                      </optgroup>
-                    </select>
-            
+                        <h4 class="text-left">Filtrar por nombre</h4>
                     </div>
                     <!--FIN FILTROS-->
                 </div>
@@ -60,7 +60,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center mb-35">
-                        <input id="myInput" type="text" placeholder="Buscar..">
+                        <input id="myInput" type="text" placeholder="Buscar alumno..">
+                        <!-- <input id="curso" type="text" placeholder="Buscar curso.."> --> 
                         <a href="{{ url('/alumno/create')}}" class="button large-button">Añadir Alumno</a>
                     </div>
                     <div class="job-post-container fix mb-70">
@@ -70,35 +71,38 @@
 
 
                         <div id="filtro" class="single-job-post fix">
-                            <div class="job-title col-3 pl-30">
-                                
-                                <span class="pull-left block mtb-17">
-                                    <a href="#"><img src= "{{ asset($alumno->foto) }} "width="72" alt="noFoto"></a>
-                                </span>
-                                <div class="fix pl-30 mt-29">
-                                    <h4 class="mb-5"> {{$alumno->nombreapellidos}} </h4>
+                            <div id="vacio">
+                                <div class="job-title col-3 pl-30">
+                                    
+                                    <span class="pull-left block mtb-17">
+                                        <a href="#"><img src= "{{ asset($alumno->foto) }} "width="72" alt="noFoto"></a>
+                                    </span>
+                                    <div class="fix pl-30 mt-29">
+                                        <h4 class="mb-5"> {{$alumno->nombreapellidos}} </h4>
+                                        <p class="mb-5"> {{$alumno->nombre}} </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="address col-3 pl-100">
-                                <span class="mtb-30 block"> {{$alumno->dni}} </span>
-                                @if($alumno->baja == 0)
-                                <span class="mtb-30 block" style="color:green"> Activo </span>
-                                @else
-                                <span class="mtb-30 block" style="color:red"> No activo </span>
-                                @endif
-                            </div>
-                            <div class="keyword col-4 pl-20 pt-39">
-                                <a href="{{ url('/alumno/show/'.$alumno->id )}}" class="button mr-10">&#9997; Detalles</a>
-                                @if(session('admin') == "si")
-
+                                <div class="address col-3 pl-100">
+                                    <span class="mtb-30 block"> {{$alumno->dni}} </span>
                                     @if($alumno->baja == 0)
-                                    <a href="{{url('/alumno/desactivar/'.$alumno->id)}}" class="button mr-10">Desactivar</a>
+                                    <span class="mtb-30 block" style="color:green"> Activo </span>
                                     @else
-                                    <a href="{{url('/alumno/activar/'.$alumno->id)}}" class="button mr-10">
-                                    Activar</a>
+                                    <span class="mtb-30 block" style="color:red"> No activo </span>
                                     @endif
-                                    <a href="{{url('/alumno/eliminar/'.$alumno->id)}}" class="button">&#x2717; Eliminar</a>
-                                @endif
+                                </div>
+                                <div class="keyword col-4 pl-20 pt-39">
+                                    <a href="{{ url('/alumno/show/'.$alumno->id )}}" class="button mr-10">&#9997; Detalles</a>
+                                    @if(session('admin') == "si")
+
+                                        @if($alumno->baja == 0)
+                                        <a href="{{url('/alumno/desactivar/'.$alumno->id)}}" class="button mr-10">Desactivar</a>
+                                        @else
+                                        <a href="{{url('/alumno/activar/'.$alumno->id)}}" class="button mr-10">
+                                        Activar</a>
+                                        @endif
+                                        <a href="{{url('/alumno/eliminar/'.$alumno->id)}}" class="button">&#x2717; Eliminar</a>
+                                    @endif
+                                </div>
                             </div>
                         </div>
               @endforeach
