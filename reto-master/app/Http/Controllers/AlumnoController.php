@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\alumno;
+use App\curso;
 use Illuminate\Support\Facades\Hash;
 use Session;
 use Excel;
@@ -19,7 +20,10 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        $alumnos=alumno::all();
+        $alumnos= DB::table('alumnos')
+            ->join('cursos', 'alumnos.idCurso', '=', 'cursos.id')
+            ->select('alumnos.*', 'cursos.nombre')
+            ->get();
         return view('Alumno.index',compact('alumnos')); 
     }
 
